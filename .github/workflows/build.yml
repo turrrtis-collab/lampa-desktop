@@ -26,12 +26,12 @@ jobs:
 
       - name: Publish x32 for Windows
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_PUBLISH }}
         run: npm run publish-x32-win32
 
       - name: Publish x64 for Windows
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_PUBLISH }}
         run: npm run publish-x64-win32
 
   publish-x64-linux:
@@ -51,5 +51,5 @@ jobs:
 
       - name: Publish x64 for Linux
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_PUBLISH }}
         run: npm run publish-x64-linux
