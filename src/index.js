@@ -28,7 +28,7 @@ const createWindow = () => {
   });
 
   mainWindow.setMenu(null)
-  mainWindow.loadFile(path.join(__dirname, 'https://mirol.club/'));
+  mainWindow.loadFile(path.join(__dirname, '/'));
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();
