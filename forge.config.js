@@ -3,7 +3,7 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 
 module.exports = {
   packagerConfig: {
-    author: "ymata, GideonWhite1029",
+    author: "ymata, turrrtis-collab",
     description: "Приложение для просмотров фильмов и сериалов",
     arch: ["x64", "ia32"],
     platform: ["win32", "linux", "darwin"],
@@ -24,8 +24,8 @@ module.exports = {
     {
       name: '@electron-forge/maker-deb',
       config: {
-        maintainer: 'GideonWhite1029',
-        homepage: 'https://github.com/GideonWhite1029/lampa-desktop'
+        maintainer: 'turrrtis-collab',
+        homepage: 'https://github.com/turrrtis-collab/lampa-desktop'
       },
     }
   ],
@@ -49,7 +49,7 @@ module.exports = {
       name: '@electron-forge/publisher-github',
       config: {
         repository: {
-          owner: 'GideonWhite1029',
+          owner: 'turrrtis-collab',
           name: 'lampa-desktop'
         },
         prerelease: false,
