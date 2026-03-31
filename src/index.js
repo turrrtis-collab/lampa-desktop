@@ -28,7 +28,7 @@ const createWindow = () => {
   });
 
   mainWindow.setMenu(null)
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  mainWindow.loadURL('https://positron.click');
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();
