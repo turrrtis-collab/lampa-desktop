@@ -1,6 +1,7 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('node:path');
 const { updateElectronApp, UpdateSourceType} = require('update-electron-app');
+const log = require('electron-log');
 
 if (require('electron-squirrel-startup')) {
   app.quit();
@@ -16,15 +17,15 @@ const createWindow = () => {
     minHeight: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: false,
-      contextIsolation: true,
-      enableRemoteModule: false,
+      nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: true,
       sandbox: false
     },
     icon: path.join(__dirname, 'img', 'og.png'),
     show: false,
     titleBarStyle: process.platform === 'darwin' ? 'hiddenInset' : 'default',
-    webSecurity: true
+    webSecurity: false
   });
 
   mainWindow.setMenu(null)
@@ -45,7 +46,7 @@ const createWindow = () => {
   mainWindow.webContents.on('will-navigate', (event, navigationUrl) => {
     const parsedUrl = new URL(navigationUrl);
 
-    if (parsedUrl.origin !== 'file://') {
+    if (parsedUrl.origin !== 'https://positron.click' && parsedUrl.origin !== 'file://') {
       event.preventDefault();
     }
   });
@@ -69,10 +70,10 @@ app.whenReady().then(async () => {
     updateElectronApp({
         updateSource: {
             type: UpdateSourceType.ElectronPublicUpdateService,
-            repo: 'GideonWhite1029/lampa-desktop'
+            repo: 'turrrtis-collab/lampa-desktop'
         },
         updateInterval: '1 hour',
-        logger: require('electron-log')
+        logger: log
     });
   } catch (error) {
     console.error('Ошибка при настройке автообновлений:', error);
