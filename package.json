@@ -40,14 +40,14 @@
     "@electron-forge/publisher-github": "^7.10.2",
     "@electron/fuses": "^1.8.0",
     "electron": "39.1.2",
-    "electron-builder": "^26.4.0",
-    "electron-log": "^5.4.3"
+    "electron-builder": "^26.4.0"
   },
   "author": {
     "name": "mirol.club"
   },
   "license": "MIT",
   "dependencies": {
+    "electron-log": "^5.4.3",
     "electron-squirrel-startup": "^1.0.1",
     "update-electron-app": "^3.1.1"
   }
