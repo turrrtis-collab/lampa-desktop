@@ -54,7 +54,7 @@ module.exports = {
         },
         prerelease: false,
         generateReleaseNotes: true,
-        draft: true
+        draft: false
       }
     }
   ],
